@@ -3,12 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Repositories\BrandProductRepo;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
@@ -19,6 +20,8 @@ class UserSeeder extends Seeder
         $faker = \Faker\Factory::create();
         $payment_de = new \Faker\Provider\de_DE\Payment($faker);
         $payment = new \Faker\Provider\Payment($faker);
+        $faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
+        $brandProductRepo = new BrandProductRepo($faker);
 
         // Create Admin User
         $admin = User::create([
@@ -58,7 +61,8 @@ class UserSeeder extends Seeder
             $user1->bank_details()->create([
                 "bankName" => $payment_de->bank(),
                 "accountNumber" => $payment_de->bankAccountNumber(),
-                "bankBalance" => $faker->randomFloat(2, 100, 100000),
+                // "bankBalance" => $faker->randomFloat(2, 100, 100000),
+                "bankBalance" => 0,
                 "currency" => "PKR",
             ]);
         }
@@ -71,17 +75,29 @@ class UserSeeder extends Seeder
                 "cardBrand" => $payment->creditCardType()
             ]);
         }
-        for ($i = 0; $i < 15; $i++) {
-            $user1->transactions()->create([
-                "transactionType" => rand(0, 1) == 1 ? "credit" : "debit",
-                "transactionAmount" => $faker->randomFloat(2, 100, 1000),
-                "transactionMemberName" => $faker->firstName(),
-                "transactionDate" => $faker->dateTime(),
-                "transactionID" => $faker->uuid(),
-                "transactionMemberWalletAddress" => $faker->regexify('[A-Za-z0-9]{34}'),
-                "transactionNote" => $faker->sentence(),
-                "transactionCategory" => $faker->domainWord()
-            ]);
+        for ($i = 0; $i < 5; $i++) {
+            $brand = $user1->brands()->create($brandProductRepo->getRandomBrand());
+            for ($i = 0; $i < 5; $i++) {
+                $user1->brand_products()->create([
+                    "brand_id" => $brand->id,
+                    "title" => $faker->productName,
+                    "amount" => rand(111, 999),
+                    "walletAddress" => $faker->regexify('[A-Za-z0-9]{34}'),
+                    // "banner" => $faker->randomFloat(2, 100, 100000),
+                ]);
+            }
         }
+        // for ($i = 0; $i < 15; $i++) {
+        //     $user1->transactions()->create([
+        //         "transactionType" => rand(0, 1) == 1 ? "credit" : "debit",
+        //         "transactionAmount" => $faker->randomFloat(2, 100, 1000),
+        //         "transactionMemberName" => $faker->firstName(),
+        //         "transactionDate" => $faker->dateTime(),
+        //         "transactionID" => $faker->regexify('[0-9]{15}'),
+        //         "transactionMemberWalletAddress" => $faker->regexify('[A-Za-z0-9]{34}'),
+        //         "transactionNote" => $faker->sentence(),
+        //         "transactionCategory" => $faker->domainWord()
+        //     ]);
+        // }
     }
 }

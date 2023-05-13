@@ -10,6 +10,7 @@ class Transaction extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'transactionID',
         'transactionType',
         'transactionAmount',
@@ -17,7 +18,16 @@ class Transaction extends Model
         'transactionDate',
         'transactionMemberWalletAddress',
         'transactionNote',
-        'transactionCategory'
+        'transactionCategory',
+        "transactionMemberBusinessWebsite",
+        "transactionMemberAvatar",
+        'transactionMemberPhoneNumber',
+        "transactionInitiatorName",
+        "transactionInitiatorEmail",
+        "transactionInitiatorPhoneNumber",
+        "transactionInitiatorBankName",
+        "transactionInitiatorUid",
+        "transactionInitiatorWalletAddress",
     ];
     // Relation
     public function user()

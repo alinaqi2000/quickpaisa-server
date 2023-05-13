@@ -12,12 +12,12 @@ class CardResource extends BaseResource
      */
     public function toArray($request)
     {
-        return [
+        return collect([
             "cardNumber" => $this->cardNumber,
             "cvv" => $this->cvv,
             "cardPin" => $this->cardPin,
             "cardBrand" => $this->cardBrand,
             "expiryDate" => $this->expiryDate
-        ];
+        ])->filter()->toArray();
     }
 }

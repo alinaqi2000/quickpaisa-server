@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->foreignId("user_id")->nullable()->constrained("users")->cascadeOnUpdate()->nullOnDelete();
+            $table->foreignId("user_id")->nullable()->constrained("users")->cascadeOnUpdate()->cascadeOnDelete();
 
             $table->string('cardNumber');
             $table->integer('cvv');

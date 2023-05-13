@@ -60,6 +60,10 @@ class User extends Authenticatable
     {
         return "{$this->first_name} {$this->last_name}";
     }
+    public function balance()
+    {
+        return $this->bank_details()->sum("bankBalance");
+    }
 
     // Relations
     public function contacts()
@@ -73,6 +77,14 @@ class User extends Authenticatable
     public function cards()
     {
         return $this->hasMany(Card::class);
+    }
+    public function brands()
+    {
+        return $this->hasMany(Brand::class);
+    }
+    public function brand_products()
+    {
+        return $this->hasMany(BrandProduct::class);
     }
     public function transactions()
     {

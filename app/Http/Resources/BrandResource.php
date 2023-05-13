@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources;
 
-class PostObjectionResource extends BaseResource
+class BrandResource extends BaseResource
 {
     /**
      * Transform the resource into an array.
@@ -12,11 +12,12 @@ class PostObjectionResource extends BaseResource
      */
     public function toArray($request)
     {
-        return [
+        return collect([
             "id" => $this->id,
-            "description" => $this->description,
-            "cleared" => $this->cleared,
-            "date" => date("M d, Y", strtotime($this->created_at)),
-        ];
+            "name" => $this->name,
+            "homepage" => $this->homepage,
+            "avatar" => $this->avatar,
+            "walletAddress" => $this->walletAddress,
+        ])->filter()->toArray();
     }
 }

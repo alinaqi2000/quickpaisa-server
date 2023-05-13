@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -12,14 +13,14 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('bank_details', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->foreignId("user_id")->nullable()->constrained("users")->cascadeOnUpdate()->cascadeOnDelete();
 
-            $table->string('bankName');
-            $table->string('accountNumber')->nullable();
-            $table->double('bankBalance')->nullable();
-            $table->string('currency')->nullable();
+            $table->string('name');
+            $table->string('homepage')->nullable();
+            $table->text('avatar')->nullable();
+            $table->text('walletAddress')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('bank_details');
+        Schema::dropIfExists('brands');
     }
 };

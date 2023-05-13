@@ -12,12 +12,16 @@ class UserResource extends BaseResource
      */
     public function toArray($request)
     {
-        $avatar = $this->avatar ?? asset('storage/images/"user.png');
-        return [
-            "full_name" => $this->full_name,
-            "email" => $this->email,
+        $avatar = $this->avatar ?? asset('storage/images/user.png');
+        return collect([
+            "uid" => $this->uid,
+            "first_name" => $this->first_name,
+            "last_name" => $this->last_name,
             "username" => $this->username,
-            "avatar" => $avatar
-        ];
+            "email" => $this->email,
+            "avatar" => $avatar,
+            "walletAddress" => $this->walletAddress,
+
+        ])->filter()->toArray();
     }
 }

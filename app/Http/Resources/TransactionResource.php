@@ -12,15 +12,16 @@ class TransactionResource extends BaseResource
      */
     public function toArray($request)
     {
-        return [
+        return collect([
             "transactionType" => $this->transactionType,
             "transactionAmount" => (string) round($this->transactionAmount, 2),
             "transactionMemberName" => $this->transactionMemberName,
             "transactionDate" => $this->transactionDate,
             "transactionID" => $this->transactionID,
+            'transactionMemberPhoneNumber' => $this->transactionMemberPhoneNumber,
             "transactionMemberWalletAddress" => $this->transactionMemberWalletAddress,
             "transactionNote" => $this->transactionNote,
             "transactionCategory" => $this->transactionCategory,
-        ];
+        ])->filter()->toArray();
     }
 }

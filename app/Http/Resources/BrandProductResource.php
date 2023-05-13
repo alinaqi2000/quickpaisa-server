@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources;
 
-class LocalContactResource extends BaseResource
+class BrandProductResource extends BaseResource
 {
     /**
      * Transform the resource into an array.
@@ -13,12 +13,13 @@ class LocalContactResource extends BaseResource
     public function toArray($request)
     {
         return collect([
-            "name" => $this->name,
-            "emailAddress" => $this->emailAddress,
-            "avatar" => $this->avatar,
-            "phoneNumber" => $this->phoneNumber,
-            "communicationAddress" => $this->communicationAddress,
+            "id" => $this->id,
+            "title" => $this->title,
+            "amount" => (string) $this->amount,
+            "banner" => $this->banner,
             "walletAddress" => $this->walletAddress,
+            "user" => UserResource::make($this->user),
+            "brand" => BrandResource::make($this->brand)
         ])->filter()->toArray();
     }
 }

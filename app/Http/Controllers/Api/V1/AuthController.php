@@ -57,7 +57,8 @@ class AuthController extends BaseController
             $user->bank_details()->create([
                 "bankName" => $payment_de->bank(),
                 "accountNumber" => $payment_de->bankAccountNumber(),
-                "bankBalance" => $faker->randomFloat(2, 100, 100000),
+                // "bankBalance" => $faker->randomFloat(2, 100, 100000),
+                "bankBalance" => 0,
                 "currency" => "PKR",
             ]);
         }
@@ -70,21 +71,20 @@ class AuthController extends BaseController
                 "cardBrand" => $payment->creditCardType()
             ]);
         }
-        for ($i = 0; $i < 15; $i++) {
-            $user->transactions()->create([
-                "transactionType" => rand(0, 1) == 1 ? "credit" : "debit",
-                "transactionAmount" => $faker->randomFloat(2, 100, 1000),
-                "transactionMemberName" => $faker->firstName(),
-                "transactionDate" => $faker->dateTime(),
-                "transactionID" => $faker->uuid(),
-                "transactionMemberWalletAddress" => $faker->regexify('[A-Za-z0-9]{34}'),
-                "transactionNote" => $faker->sentence(),
-                "transactionCategory" => $faker->domainWord()
-            ]);
-        }
+        // for ($i = 0; $i < 15; $i++) {
+        //     $user->transactions()->create([
+        //         "transactionType" => rand(0, 1) == 1 ? "credit" : "debit",
+        //         "transactionAmount" => $faker->randomFloat(2, 100, 1000),
+        //         "transactionMemberName" => $faker->firstName(),
+        //         "transactionDate" => $faker->dateTime(),
+        //          "transactionID" => $faker->regexify('[A-Za-z0-9]{20}'),
+        //         "transactionMemberWalletAddress" => $faker->regexify('[0-9]{15}'),
+        //         "transactionNote" => $faker->sentence(),
+        //         "transactionCategory" => $faker->domainWord()
+        //     ]);
+        // }
         $token = $user->createToken('auth_token', [], ["authenticated-user"]);
         return $this->resData(["user" => AuthUserResource::make($user), 'authorization_token' => $token->plainTextToken]);
-
     }
 
 
@@ -132,12 +132,10 @@ class AuthController extends BaseController
         $token = auth()->user()->createToken('auth_token', [], ["authenticated-user"]);
 
         return $this->resData(["user" => AuthUserResource::make(auth()->user()), 'authorization_token' => $token->plainTextToken]);
-
     }
     public function verify(Request $request)
     {
         return $this->resData(["user" => AuthUserResource::make(auth()->user())]);
-
     }
     public function logout()
     {
@@ -148,5 +146,4 @@ class AuthController extends BaseController
         }
         return $this->resMsg(['error' => "Unauthorized!"], "authentication", 401);
     }
-
 }

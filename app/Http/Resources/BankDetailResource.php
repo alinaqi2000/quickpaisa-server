@@ -12,11 +12,11 @@ class BankDetailResource extends BaseResource
      */
     public function toArray($request)
     {
-        return [
+        return collect([
             "bankName" => $this->bankName,
             "accountNumber" => $this->accountNumber,
             "bankBalance" => (string) round($this->bankBalance, 2),
             "currency" => $this->currency,
-        ];
+        ])->toArray();
     }
 }

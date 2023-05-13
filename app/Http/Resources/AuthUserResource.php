@@ -13,7 +13,7 @@ class AuthUserResource extends BaseResource
     public function toArray($request)
     {
         $avatar = $this->avatar ?? asset('storage/images/user.png');
-        return [
+        return collect([
             "id" => $this->id,
             "uid" => $this->uid,
             "first_name" => $this->first_name,
@@ -24,6 +24,6 @@ class AuthUserResource extends BaseResource
             "phone_number" => $this->phone_number,
             "walletAddress" => $this->walletAddress,
             "bankDetails" => BankDetailResource::collection($this->bank_details()->get())
-        ];
+        ])->filter()->toArray();
     }
 }

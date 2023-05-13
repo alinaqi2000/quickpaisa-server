@@ -37,47 +37,23 @@ Route::group(['namespace' => "\App\Http\Controllers\Api\V1"], function () {
         Route::post("contacts", "CategoryController@request");
         Route::get("all-contacts", "ContactController@all");
 
-        // Cards    
+        // Cards
         Route::get("available-cards", "CardController@all");
 
         // Transactions
         Route::get("all-transactions", "TransactionController@all");
+        Route::post("execute-transaction", "TransactionController@execute");
 
-        // Competitions
-        Route::get("competitions", "CompetitionController@all");
-        Route::post("competitions", "CompetitionController@store");
-        Route::post("competitions/{competition}/publish", "CompetitionController@publish");
-        Route::post("competitions/{competition}/participate", "CompetitionController@participate");
-        Route::put("competitions/{competition}", "CompetitionController@update");
-        // Competition Comments
-        Route::get("competitions/{competition}/comments", "CompetitionController@comments_all");
-        Route::get("competitions/{competition}/comments/{competition_comment}", "CompetitionController@comment_replies_all");
-        Route::post("competitions/{competition}/comments", "CompetitionController@comments_store");
-        Route::post("competitions/{competition}/comments/{competition_comment}", "CompetitionController@comment_replies");
-        Route::put("competitions/{competition}/comments/{competition_comment}", "CompetitionController@comment_update");
-
-        // Posts
-        Route::get("posts", "PostController@personal");
-        Route::get("posts/{competition}", "PostController@all");
-        Route::post("posts/{competition}", "PostController@store")->middleware("competition_participant");
-        Route::put("posts/{competition}/update/{post}", "PostController@update")->middleware("competition_participant");
-        Route::delete("posts/{competition}/delete_image/{post_image}", "PostController@delete_image")->middleware("competition_participant");
-        Route::post("posts/{competition}/upload_image/{post}", "PostController@upload_image")->middleware("competition_participant");
-
-        Route::put("posts/{competition}/approve/{post}", "PostController@approve")->middleware("competition_organizer");
-        Route::post("posts/{competition}/object/{post}", "PostController@object")->middleware("competition_organizer");
-        Route::post("posts/{competition}/toggle_show/{post}", "PostController@toggle_show")->middleware("competition_organizer");
-
-        Route::post("posts/{competition}/vote/{post}", "PostController@vote")->middleware("post_voter");
-        Route::post("posts/{competition}/report/{post}", "PostController@report")->middleware("post_voter");
-
-        // Organizer
-        Route::get("organizer/reports", "OrganizerController@reports")->middleware(['ability:organizer']);
-        Route::post("organizer/clear_report_toggle/{post_report}", "OrganizerController@clear_report_toggle")->middleware(['ability:organizer']);
-
-
-
+        // Brands
+        Route::get("all-brands", "BrandController@all");
+        Route::get("all-brand-products/{brand}", "BrandController@all_brand_products");
+        Route::post("delete-brand/{brand}", "BrandController@delete_brand");
+        Route::post("delete-brand-product/{brand_product}", "BrandController@delete_product");
+        Route::get("all-products", "BrandController@all_products");
+        Route::post("add-brand", "BrandController@add");
+        Route::post("add-brand-product", "BrandController@add_product");
     });
+    Route::get("download-product-pdf/{brand_product}", "BrandController@download_product_pdf");
     // Auth
     Route::post("auth/login", "AuthController@login");
     Route::post("auth/register", "AuthController@register");
@@ -110,8 +86,48 @@ Route::group(['namespace' => "\App\Http\Controllers\Api\V1"], function () {
 
                         ),
                     ),
+                    array(
+                        'name' => 'Huzaifa Akram',
+                        'header' => 'Software Engineer',
+                        'avatar' => 'vadim-demenko.jpg',
+                        'socials' =>
+                        array(
+                            0 =>
+                            array(
+                                'title' => 'Twitter',
+                                'url' => 'https://twitter.com/vademenko',
+                                'avatar' => 'ruslan_babkin/twitter.png',
+                            ),
+                            1 =>
+                            array(
+                                'title' => 'LinkedIn',
+                                'url' => 'https://www.linkedin.com/in/vdemenko/',
+                                'avatar' => 'ruslan_babkin/linkedin.png',
+                            ),
 
+                        ),
+                    ),
+                    array(
+                        'name' => 'Faisal Gul',
+                        'header' => 'Software Engineer',
+                        'avatar' => 'vadim-demenko.jpg',
+                        'socials' =>
+                        array(
+                            0 =>
+                            array(
+                                'title' => 'Twitter',
+                                'url' => 'https://twitter.com/vademenko',
+                                'avatar' => 'ruslan_babkin/twitter.png',
+                            ),
+                            1 =>
+                            array(
+                                'title' => 'LinkedIn',
+                                'url' => 'https://www.linkedin.com/in/vdemenko/',
+                                'avatar' => 'ruslan_babkin/linkedin.png',
+                            ),
 
+                        ),
+                    ),
                 ),
             )
         );
