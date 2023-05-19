@@ -15,6 +15,8 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements("id");
+            $table->foreignId('role_id')->nullable()->default(2)->constrained("roles")->cascadeOnUpdate()->nullOnDelete()->comment('1=Admin, 2=User');
+
             $table->string("uid")->unique();
 
             $table->string('first_name');
@@ -25,7 +27,6 @@ class CreateUsersTable extends Migration
             $table->text('phone_number')->nullable();
             $table->text('walletAddress')->nullable();
             $table->string('password')->nullable();
-            $table->integer('role_id')->default(2)->comment('1=Admin, 2=TA/TP');
             $table->tinyInteger('status')->default(1);
             $table->rememberToken();
             $table->timestamps();

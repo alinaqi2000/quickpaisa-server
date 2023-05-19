@@ -41,7 +41,6 @@ class AuthController extends BaseController
 
         $user = User::create($data);
 
-
         for ($i = 0; $i < 20; $i++) {
             $name = $faker->name();
             $user->contacts()->create([

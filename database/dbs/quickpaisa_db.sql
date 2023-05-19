@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 13, 2023 at 03:18 PM
+-- Generation Time: May 19, 2023 at 08:45 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -43,7 +43,7 @@ CREATE TABLE `bank_details` (
 --
 
 INSERT INTO `bank_details` (`id`, `user_id`, `bankName`, `accountNumber`, `bankBalance`, `currency`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Hannoversche Volksbank', 'DE49359121205840240172', 0, 'PKR', '2023-05-13 08:18:17', '2023-05-13 08:18:17');
+(1, 2, 'Deutsche Kreditbank', 'DE87910537482822701971', 0, 'PKR', '2023-05-19 01:39:50', '2023-05-19 01:39:50');
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`id`, `user_id`, `name`, `homepage`, `avatar`, `walletAddress`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Uber Eats', 'ubereats.com', 'uber-eats-logo.jpg', 'QIFVtgo5nV6vIbmIBXSbNqBD4yvBprVQNP', '2023-05-13 08:18:17', '2023-05-13 08:18:17');
+(1, 2, 'JIMIS BURGER', 'facebook.com/jimisburger/', 'jimis-burger-optimized-logo.jpg', 'suf7E8Xor5w2zIh6Z4xE8ha97E8evPTFlG', '2023-05-19 01:39:50', '2023-05-19 01:39:50');
 
 -- --------------------------------------------------------
 
@@ -92,11 +92,11 @@ CREATE TABLE `brand_products` (
 --
 
 INSERT INTO `brand_products` (`id`, `user_id`, `brand_id`, `title`, `amount`, `banner`, `walletAddress`, `created_at`, `updated_at`) VALUES
-(1, 2, 1, 'Incredible Steel Car', 866, NULL, 'ZRGrn5TgjRVudPi3KTivWQmCHfVLJhgqnB', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(2, 2, 1, 'Gorgeous Linen Chair', 615, NULL, 'lzYlWnFtTCXII1Eidb9hTOVEvkIYG3uJLm', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(3, 2, 1, 'Incredible Linen Bottle', 673, NULL, 'sAmdW417GKFaQNo1Ao5aaxThtuj6mH2n8i', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(4, 2, 1, 'Enormous Paper Shirt', 855, NULL, '6XTg5OJF7ZhmluAwLdv02JDUIX7wBkgC8X', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(5, 2, 1, 'Sleek Marble Shirt', 324, NULL, 'mSxn5ZbGGokDpqDy41BICpcdFm9DXxk0TU', '2023-05-13 08:18:17', '2023-05-13 08:18:17');
+(1, 2, 1, 'Fantastic Cotton Gloves', 888, NULL, 'DeIgxsUtZFJQvEz0yO0Hjv4kT8f2qmQgby', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(2, 2, 1, 'Aerodynamic Leather Wallet', 407, NULL, 'mB5c51GY2OS9CRzydJUO4QGduOY0mkDjFs', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(3, 2, 1, 'Synergistic Copper Computer', 445, NULL, '9tJMbK7nJfVwf7LI2CAbPOsfcejPPd5ub5', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(4, 2, 1, 'Sleek Wool Wallet', 182, NULL, 'Q3Kby1zK3lYi0d0vDnFYZ3Pw4t95vtkGYz', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(5, 2, 1, 'Synergistic Silk Keyboard', 199, NULL, 'hJvVfU0g3IT2zloCHFV4Ird9dMO8pAx50D', '2023-05-19 01:39:50', '2023-05-19 01:39:50');
 
 -- --------------------------------------------------------
 
@@ -121,9 +121,9 @@ CREATE TABLE `cards` (
 --
 
 INSERT INTO `cards` (`id`, `user_id`, `cardNumber`, `cvv`, `cardPin`, `expiryDate`, `cardBrand`, `created_at`, `updated_at`) VALUES
-(1, 2, '5436046822163628', 882, 3282, '05/25', 'American Express', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(2, 2, '2720317652985824', 274, 6991, '06/25', 'Discover Card', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(3, 2, '4532579172144679', 277, 6872, '05/24', 'MasterCard', '2023-05-13 08:18:17', '2023-05-13 08:18:17');
+(1, 2, '4916293234383533', 445, 8615, '05/25', 'MasterCard', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(2, 2, '5398288033366790', 775, 3180, '12/25', 'Discover Card', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(3, 2, '4485530222562656', 619, 5352, '05/25', 'Visa', '2023-05-19 01:39:50', '2023-05-19 01:39:50');
 
 -- --------------------------------------------------------
 
@@ -165,26 +165,26 @@ CREATE TABLE `local_contacts` (
 --
 
 INSERT INTO `local_contacts` (`id`, `user_id`, `name`, `emailAddress`, `phoneNumber`, `avatar`, `communicationAddress`, `walletAddress`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Emely Marks', 'anahi97@example.org', '1-779-523-9543', 'https://via.placeholder.com/128x128.png/CCCCCC?text=E', '75383 Hunter Mission Suite 416\nNew Rachaelberg, ME 79063', 'qBS3CPwr8NAsWg4cL6Y3ihMIHf80sTSpXd', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(2, 2, 'Dr. King Pfannerstill', 'lowe.dangelo@example.net', '1-440-701-5569', 'https://via.placeholder.com/128x128.png/CCCCCC?text=D', '656 Gordon Mountains Suite 336\nMyrtismouth, HI 15682-0851', 'yJE2SWVjomjU4PnH5E4NVmVWlmG80VEghO', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(3, 2, 'Edward Barton', 'jett64@example.com', '980.830.0909', 'https://via.placeholder.com/128x128.png/CCCCCC?text=E', '174 Hauck Station Suite 207\nPort Jeromyville, MS 89673', 'IyxMQaVO29iSAgqeF4SMmkV9lGJdGGVGrm', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(4, 2, 'Lynn Schulist', 'camryn04@example.org', '+1 (240) 860-6216', 'https://via.placeholder.com/128x128.png/CCCCCC?text=L', '479 Walter Club Suite 675\nYvonnechester, NV 07339', 'hindODggw25OpwmVXvhcaw0du3AV5PsKRe', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(5, 2, 'Mrs. Mittie Willms DVM', 'katlyn.marks@example.org', '+1.702.380.6662', 'https://via.placeholder.com/128x128.png/CCCCCC?text=M', '51487 Simonis Place\nPort Janessa, UT 36638', 'YDVQ2Dz3oJRvb75CtJ1nOdMkSDgqNKfHlO', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(6, 2, 'Joanie Hand', 'craig63@example.net', '(520) 727-0799', 'https://via.placeholder.com/128x128.png/CCCCCC?text=J', '934 Larue Lakes\nWest Russburgh, NV 09552', 'RC3q1muBWUIm2l6aRfVPNzE0gKRuXefCWx', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(7, 2, 'Sean Schimmel', 'monahan.veda@example.net', '+1-646-770-0296', 'https://via.placeholder.com/128x128.png/CCCCCC?text=S', '45055 Cristian Port\nLake Ramonamouth, CO 77046-8650', 'ks1OmXKiLEQcktfHLb5q98XafPcOd0HFKX', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(8, 2, 'Miss Sienna Wiegand IV', 'pkihn@example.net', '+1 (260) 661-0788', 'https://via.placeholder.com/128x128.png/CCCCCC?text=M', '8563 Mafalda Rue\nWest Kristoferberg, IA 33009', 'ZSlA075KdoCCuLBoYYRoYN4gD8LTQJ7L3y', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(9, 2, 'Ellie Heaney', 'mlehner@example.com', '1-640-886-2030', 'https://via.placeholder.com/128x128.png/CCCCCC?text=E', '10745 Hackett Rue Suite 516\nPaulside, NH 92227-9120', 'uP3ZZxp8ETU67y343eDwtpqLa43CtEz2k3', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(10, 2, 'Jess Wisozk', 'zfadel@example.org', '260-998-4965', 'https://via.placeholder.com/128x128.png/CCCCCC?text=J', '1487 Bogan Heights\nDavisside, TX 61352-6241', 'RoXAuPgSCh0pzg3azNKEyWiukdTOQWxtg0', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(11, 2, 'Millie Breitenberg', 'herbert89@example.org', '1-818-786-7016', 'https://via.placeholder.com/128x128.png/CCCCCC?text=M', '6414 Lucinda Place Suite 980\nLarkintown, TN 85197', '1Oz2dD06B4uyuLwvApJ2TSq8T0LSzTYiWw', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(12, 2, 'Dr. Bobbie Anderson PhD', 'zeffertz@example.net', '1-820-892-6682', 'https://via.placeholder.com/128x128.png/CCCCCC?text=D', '61469 Bergstrom Path Suite 715\nHillsville, IN 36817-9887', 'vFsC0fU0KzYy1LsMnXdOkKirGLz0yjfzeN', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(13, 2, 'Rupert Hill', 'ian66@example.org', '+1.240.421.7376', 'https://via.placeholder.com/128x128.png/CCCCCC?text=R', '18333 Jade Cove Apt. 811\nMichelleborough, SD 43378-9695', '5aEqDQjepRI5SnMW08C7Bme9Oa3yV9dF3k', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(14, 2, 'Ms. Monica Kunde PhD', 'noble47@example.com', '+15208305359', 'https://via.placeholder.com/128x128.png/CCCCCC?text=M', '6131 Wintheiser Camp Apt. 640\nEast Moniqueland, DC 29817-1376', 'YHqDTOo4TvBZSwAPAbZaRzovZsbYr6ADEm', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(15, 2, 'Everett Hyatt I', 'ooreilly@example.net', '+18608622934', 'https://via.placeholder.com/128x128.png/CCCCCC?text=E', '89303 Peggie Shores\nWest Fern, KS 70147-6720', 'CoIpqXfXGWZrO03hnlYBjULt8vdVP13kb9', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(16, 2, 'Hallie Ferry DVM', 'luisa71@example.net', '+1.260.455.6133', 'https://via.placeholder.com/128x128.png/CCCCCC?text=H', '9811 Elouise Greens Apt. 488\nNorth Karlieshire, SD 23567-8908', 'NWMVWY1dcjHqUtj462JCy6yLDteduaGolH', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(17, 2, 'Caden Monahan', 'wava.little@example.org', '+1 (657) 320-1090', 'https://via.placeholder.com/128x128.png/CCCCCC?text=C', '71587 Beahan Stravenue Suite 178\nVernertown, ID 46377', 'OvbqUUw4sWSWSicDscIQLrodS74zgljfye', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(18, 2, 'Prof. Susan Kuvalis II', 'tara40@example.com', '+1-934-504-7638', 'https://via.placeholder.com/128x128.png/CCCCCC?text=P', '61416 Clarissa Squares\nJeramyfurt, NE 01991', 'yRHUu8mIzesM53OfikGZdbzKAsQD1CzHZn', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(19, 2, 'Kennith Schmitt', 'gerhold.dolores@example.com', '+1-281-630-8221', 'https://via.placeholder.com/128x128.png/CCCCCC?text=K', '9905 Elvis Rue\nSouth Olliehaven, LA 51471-1450', '0zw3vhUIp15SE0sCLKcp3Fktaz4s1EcXmW', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(20, 2, 'Jennie Ratke', 'cgibson@example.com', '956.825.7002', 'https://via.placeholder.com/128x128.png/CCCCCC?text=J', '4178 Wendell Forks\nSouth Veronicamouth, AL 85041', 'A8lsal4I7PPYM2IhX2VJFnfzNLUJdBMcCO', '2023-05-13 08:18:17', '2023-05-13 08:18:17');
+(1, 2, 'Eden Heaney', 'dedrick.bosco@example.org', '+1 (283) 731-5315', 'https://via.placeholder.com/128x128.png/CCCCCC?text=E', '487 Jeanette Villages\nKeatonburgh, DC 99433', 'kRGJPzM9PxRaeDeKKJDhr2mpFlPCEup5ly', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(2, 2, 'Frederique Effertz', 'herminio52@example.net', '+1-419-334-3860', 'https://via.placeholder.com/128x128.png/CCCCCC?text=F', '5347 Gusikowski Mills Apt. 875\nNorth Adrienne, IN 03750', '4umccCNLAc4OvscXTy7HJ9e86i45zGmNev', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(3, 2, 'Ramona Kling', 'runte.pauline@example.com', '1-980-716-0319', 'https://via.placeholder.com/128x128.png/CCCCCC?text=R', '2481 Sanford Gateway Suite 188\nEast Corbin, ME 75258-1314', 'pAo0rEQOFbvyebGaYZOxBIdrDN2RdpkRb7', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(4, 2, 'Chet Nikolaus', 'gulgowski.karson@example.com', '+1 (972) 405-0827', 'https://via.placeholder.com/128x128.png/CCCCCC?text=C', '1005 Albina Cove\nAbshirebury, WV 78109-3954', 'yFWygJGmWWZgIuoUBD0OSr94ZApGaVONJE', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(5, 2, 'Prof. Annabelle Torphy', 'roger29@example.com', '1-762-286-2599', 'https://via.placeholder.com/128x128.png/CCCCCC?text=P', '637 Koss Island\nLangoshville, DC 51963', 'te84WLVJWhkWryWNR4iTA0hcJxNveCfvlt', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(6, 2, 'Angelina Mueller', 'ewill@example.com', '(620) 707-3385', 'https://via.placeholder.com/128x128.png/CCCCCC?text=A', '342 Mills Trace Suite 463\nNew Brendonchester, VA 12910', '1wAwLGcDhaenN9eVX4SIIpYhczsQw1wW93', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(7, 2, 'Josephine White', 'carley.okon@example.org', '931-980-1770', 'https://via.placeholder.com/128x128.png/CCCCCC?text=J', '661 Will Inlet Suite 581\nRockyhaven, MN 94329-2077', '0tKy63Hu8bIjf4IUsusAeoiJX5Wiupl4kQ', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(8, 2, 'Dr. Selina Marks', 'vlangworth@example.net', '786-548-1271', 'https://via.placeholder.com/128x128.png/CCCCCC?text=D', '9241 Ramon Bridge Suite 135\nNorth Kendratown, ND 85204', '6zRYOOzC2B3riWjujRiSyc9oHsRIj7SFhJ', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(9, 2, 'Yvette Orn', 'kraig.lemke@example.net', '+1 (531) 478-6413', 'https://via.placeholder.com/128x128.png/CCCCCC?text=Y', '9747 Kohler Hills\nKeatontown, WI 92442-2053', '7GO1gtnm7FlAjYcRTo7TIYiY7EDyD5gBra', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(10, 2, 'Daryl Feeney Sr.', 'ohamill@example.net', '(580) 736-3489', 'https://via.placeholder.com/128x128.png/CCCCCC?text=D', '540 Shania Streets Apt. 852\nArmandoberg, SC 18285-6596', 'pEQD3X2AgBwFV2AFEwVC2O5LtfQurGLQBq', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(11, 2, 'Dr. Elva Haag DDS', 'dewayne46@example.com', '(337) 658-7989', 'https://via.placeholder.com/128x128.png/CCCCCC?text=D', '237 Klocko Bypass Suite 915\nConnerville, MS 49922', '4tJ0uQz4sU8gmOsrNr67ZalzVs1nnyLl19', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(12, 2, 'Miss Emelia Doyle IV', 'ddicki@example.net', '(720) 912-3478', 'https://via.placeholder.com/128x128.png/CCCCCC?text=M', '1052 Roselyn Center\nSydnifort, WI 94717', 'CEVhcahoq8A1z6ztwKhCIMi6q6WpFym3BD', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(13, 2, 'Spencer Parisian', 'myrtle.moore@example.org', '1-804-624-0544', 'https://via.placeholder.com/128x128.png/CCCCCC?text=S', '498 Opal Fort Suite 512\nNew Jaclyn, WV 82797', '2sBmQ1beOgvnFa3pyrvZTT93T7DiMoGHbc', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(14, 2, 'Robbie O\'Connell', 'colton.larson@example.net', '+1 (516) 754-6813', 'https://via.placeholder.com/128x128.png/CCCCCC?text=R', '3481 Bins Shore\nAndrehaven, SC 94805', 'o5zK3RNW8HCZOim9amBaHJcHqu83lEX6tw', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(15, 2, 'Deron Collins', 'nokuneva@example.com', '320-800-9118', 'https://via.placeholder.com/128x128.png/CCCCCC?text=D', '14852 Rafael Vista Apt. 915\nTorphaven, IN 49497', '8zz26UEOG3lYl8uuzT8vvsSBHlJKBPuTCE', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(16, 2, 'Mrs. Eliane Hand', 'koss.amira@example.net', '1-304-440-3042', 'https://via.placeholder.com/128x128.png/CCCCCC?text=M', '70561 Ernser Dam\nNorth Estherland, MT 47884-8980', 'dxk21HqQRmAF2xCw06Yo86jY3S4SmwEH4m', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(17, 2, 'Candice Schinner III', 'maurine.cummerata@example.org', '772.358.0362', 'https://via.placeholder.com/128x128.png/CCCCCC?text=C', '96282 Orrin Curve\nNew Magnoliatown, CT 00368-0730', 'CKGslkwkqrSy9uTfB1EdR5uAbGyhwRwnAL', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(18, 2, 'Sadie Witting', 'horacio48@example.net', '1-916-922-6229', 'https://via.placeholder.com/128x128.png/CCCCCC?text=S', '81161 Howell Plaza Suite 427\nNorth Janetton, HI 07248-7949', 'NXeMxBjKnjKHUtAuJ981o9G3gXY8nJw9VG', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(19, 2, 'Dr. Efren Kiehn I', 'hauck.cedrick@example.net', '308.203.2555', 'https://via.placeholder.com/128x128.png/CCCCCC?text=D', '546 Ondricka Extension\nLake Lamont, IL 31721-6169', 't2u6wHlrNP99Cyf6kp7lQJkatUFyGLajL9', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(20, 2, 'Dr. Johnnie Grady', 'ftreutel@example.net', '(520) 680-1904', 'https://via.placeholder.com/128x128.png/CCCCCC?text=D', '795 Pacocha Throughway\nMikeside, NY 72991', 'V45AYQvqRKS6foeI1pW3GtTXHPjfcB5zBS', '2023-05-19 01:39:50', '2023-05-19 01:39:50');
 
 -- --------------------------------------------------------
 
@@ -203,17 +203,17 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(469, '2014_10_12_000000_create_users_table', 1),
-(470, '2014_10_12_100000_create_password_resets_table', 1),
-(471, '2019_08_19_000000_create_failed_jobs_table', 1),
-(472, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(473, '2022_01_12_173356_create_permission_tables', 1),
-(474, '2023_04_30_133409_create_local_contacts_table', 1),
-(475, '2023_05_01_093946_create_bank_details_table', 1),
-(476, '2023_05_01_095808_create_cards_table', 1),
-(477, '2023_05_01_103442_create_transactions_table', 1),
-(478, '2023_05_07_035132_create_brands_table', 1),
-(479, '2023_05_10_075117_create_brand_products_table', 1);
+(67, '2014_10_12_100000_create_password_resets_table', 1),
+(68, '2019_08_19_000000_create_failed_jobs_table', 1),
+(69, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(70, '2022_01_12_173356_create_permission_tables', 1),
+(71, '2022_11_12_000000_create_users_table', 1),
+(72, '2023_04_30_133409_create_local_contacts_table', 1),
+(73, '2023_05_01_093946_create_bank_details_table', 1),
+(74, '2023_05_01_095808_create_cards_table', 1),
+(75, '2023_05_01_103442_create_transactions_table', 1),
+(76, '2023_05_07_035132_create_brands_table', 1),
+(77, '2023_05_10_075117_create_brand_products_table', 1);
 
 -- --------------------------------------------------------
 
@@ -244,7 +244,8 @@ CREATE TABLE `model_has_roles` (
 --
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
-(1, 'App\\Models\\User', 1);
+(1, 'App\\Models\\User', 1),
+(2, 'App\\Models\\User', 3);
 
 -- --------------------------------------------------------
 
@@ -277,18 +278,18 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'user-list', 'web', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(2, 'user-create', 'web', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(3, 'user-edit', 'web', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(4, 'user-delete', 'web', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(5, 'role-create', 'web', '2023-05-13 08:18:18', '2023-05-13 08:18:18'),
-(6, 'role-edit', 'web', '2023-05-13 08:18:18', '2023-05-13 08:18:18'),
-(7, 'role-list', 'web', '2023-05-13 08:18:18', '2023-05-13 08:18:18'),
-(8, 'role-delete', 'web', '2023-05-13 08:18:18', '2023-05-13 08:18:18'),
-(9, 'permission-list', 'web', '2023-05-13 08:18:18', '2023-05-13 08:18:18'),
-(10, 'permission-create', 'web', '2023-05-13 08:18:18', '2023-05-13 08:18:18'),
-(11, 'permission-edit', 'web', '2023-05-13 08:18:18', '2023-05-13 08:18:18'),
-(12, 'permission-delete', 'web', '2023-05-13 08:18:18', '2023-05-13 08:18:18');
+(1, 'user-list', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(2, 'user-create', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(3, 'user-edit', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(4, 'user-delete', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(5, 'role-create', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(6, 'role-edit', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(7, 'role-list', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(8, 'role-delete', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(9, 'permission-list', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(10, 'permission-create', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(11, 'permission-edit', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(12, 'permission-delete', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50');
 
 -- --------------------------------------------------------
 
@@ -327,8 +328,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'web', '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(2, 'User', 'web', '2023-05-13 08:18:17', '2023-05-13 08:18:17');
+(1, 'Admin', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(2, 'User', 'web', '2023-05-19 01:39:50', '2023-05-19 01:39:50');
 
 -- --------------------------------------------------------
 
@@ -398,6 +399,7 @@ CREATE TABLE `transactions` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `role_id` bigint(20) UNSIGNED DEFAULT 2,
   `uid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -407,7 +409,6 @@ CREATE TABLE `users` (
   `phone_number` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `walletAddress` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `role_id` int(11) NOT NULL DEFAULT 2 COMMENT '1=Admin, 2=TA/TP',
   `status` tinyint(4) NOT NULL DEFAULT 1,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -418,9 +419,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `uid`, `first_name`, `username`, `email`, `last_name`, `avatar`, `phone_number`, `walletAddress`, `password`, `role_id`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, '580ba884-c14d-3ff1-aa93-d466d9601320', 'Super', 'admin', 'admin@admin.com', 'Admin', NULL, '9028187696', NULL, '$2y$10$u63FolJB2ucMc7C0iI78j.SpCRRlHxs/Yahk2hY1XpFnMHsZuLLoy', 1, 1, NULL, '2023-05-13 08:18:17', '2023-05-13 08:18:17'),
-(2, 'e2b7e80c-9d8b-37d5-b521-0844eb04b247', 'Mary', 'mary.kertzmann', 'mary.kertzmann@gmail.com', 'Kertzmann', NULL, '03061256545', 'ifsoloWLOcqNhfGS4Ln9U7KbM2R4RvHRKE', '$2y$10$ROp.ysrW38qpXLWilf05eOFIzQ1lVO9WlHXxI1QKBniD5VCs.6UUS', 2, 1, NULL, '2023-05-13 08:18:17', '2023-05-13 08:18:17');
+INSERT INTO `users` (`id`, `role_id`, `uid`, `first_name`, `username`, `email`, `last_name`, `avatar`, `phone_number`, `walletAddress`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 1, '60ff4218-afea-3574-882e-ddd3aeece1d5', 'Super', 'admin', 'admin@admin.com', 'Admin', NULL, '9028187696', NULL, '$2y$10$nXBlTMSLJ1/Zmtv7trqlU.scv/ev5RGAl5vaKYbfPKeIxILAUS1qy', 1, NULL, '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(2, 2, 'fe1583dc-e145-3124-9759-bb46f7961a6b', 'Mary', 'mary.kertzmann', 'mary.kertzmann@gmail.com', 'Kertzmann', NULL, '03061256545', 'oKProtOsC4QwkpAdUPEgu52qSfnhTjSlSz', '$2y$10$9YISejSD73f0tcqITNqbre5tZDRpvEEuwjJj4nQ1jTd309LbkihDK', 1, NULL, '2023-05-19 01:39:50', '2023-05-19 01:39:50'),
+(3, 2, '42af751a-86e5-37c9-9bb3-8be65b15f2ec', 'Nuri', 'mary.kartzmann', 'sahinnuri23@gmail.com', 'Sahin', NULL, '03061561246', '1dcviZpV7U2wZzl0uNcMkFrppCsge9DfSQ', '$2y$10$ERvlIf3s7H44Po0SLUXu1OzaMXpMkNEpz.sEUBWqlvfsTsE6TRk/u', 1, NULL, '2023-05-19 01:39:53', '2023-05-19 01:40:20');
 
 --
 -- Indexes for dumped tables
@@ -538,7 +540,8 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_uid_unique` (`uid`),
   ADD UNIQUE KEY `users_username_unique` (`username`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD KEY `users_role_id_foreign` (`role_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -584,7 +587,7 @@ ALTER TABLE `local_contacts`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=480;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -614,7 +617,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -675,6 +678,12 @@ ALTER TABLE `role_has_permissions`
 --
 ALTER TABLE `transactions`
   ADD CONSTRAINT `transactions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

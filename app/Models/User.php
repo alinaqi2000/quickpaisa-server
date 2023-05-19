@@ -21,9 +21,9 @@ class User extends Authenticatable
     protected $fillable = [
         'uid',
         'first_name',
+        'last_name',
         'username',
         'email',
-        'last_name',
         'avatar',
         'phone_number',
         'walletAddress',
@@ -66,6 +66,10 @@ class User extends Authenticatable
     }
 
     // Relations
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
     public function contacts()
     {
         return $this->hasMany(LocalContact::class);
