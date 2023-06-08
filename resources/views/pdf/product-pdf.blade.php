@@ -5,12 +5,14 @@
 <html>
 
 <head>
+    <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">
     <title>Product Details</title>
     <style>
         body {
             text-align: center;
             background: #000;
             color: #fff;
+            font-family: DejaVu Sans, sans-serif;
         }
 
 

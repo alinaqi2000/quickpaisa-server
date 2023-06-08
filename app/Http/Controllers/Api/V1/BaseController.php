@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Models\BrandProduct;
 use App\Models\Notification;
 use App\Models\User;
 
@@ -80,8 +81,13 @@ class BaseController extends Controller
         }
 
 
-        if ($receiver = User::where('walletAddress', $request->transactionMemberWalletAddress)->first()) {
-
+        if (
+            ($receiver = User::where('walletAddress', $request->transactionMemberWalletAddress)->first()) ||
+            ($brandProduct = BrandProduct::where('walletAddress', $request->transactionMemberWalletAddress)->first())
+        ) {
+            if (!$receiver) {
+                $receiver = $brandProduct->user;
+            }
             if ($receiverBank = $receiver->bank_details()->first()) {
                 $balance = $request->transactionType == 'debit' ? (float)$receiverBank->bankBalance + (float) $request->transactionAmount : (float)$receiverBank->bankBalance - (float) $request->transactionAmount;
                 $receiverBank->update(['bankBalance' =>  $balance]);
