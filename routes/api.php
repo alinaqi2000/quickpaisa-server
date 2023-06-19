@@ -74,16 +74,9 @@ Route::group(['namespace' => "\App\Http\Controllers\Api\V1"], function () {
                             0 =>
                             array(
                                 'title' => 'Twitter',
-                                'url' => 'https://twitter.com/vademenko',
+                                'url' => 'https://twitter.com/920Ranjha?t=x7fOu2RtW8_dYrgUzc9Q6A&s=08',
                                 'avatar' => 'ruslan_babkin/twitter.png',
-                            ),
-                            1 =>
-                            array(
-                                'title' => 'LinkedIn',
-                                'url' => 'https://www.linkedin.com/in/vdemenko/',
-                                'avatar' => 'ruslan_babkin/linkedin.png',
-                            ),
-
+                            )
                         ),
                     ),
                     array(
@@ -95,20 +88,13 @@ Route::group(['namespace' => "\App\Http\Controllers\Api\V1"], function () {
                             0 =>
                             array(
                                 'title' => 'Twitter',
-                                'url' => 'https://twitter.com/vademenko',
+                                'url' => 'https://twitter.com',
                                 'avatar' => 'ruslan_babkin/twitter.png',
-                            ),
-                            1 =>
-                            array(
-                                'title' => 'LinkedIn',
-                                'url' => 'https://www.linkedin.com/in/vdemenko/',
-                                'avatar' => 'ruslan_babkin/linkedin.png',
-                            ),
-
+                            )
                         ),
                     ),
                     array(
-                        'name' => 'Faisal Gul',
+                        'name' => 'Faisal Gull',
                         'header' => 'Software Engineer',
                         'avatar' => 'vadim-demenko.jpg',
                         'socials' =>
@@ -116,16 +102,9 @@ Route::group(['namespace' => "\App\Http\Controllers\Api\V1"], function () {
                             0 =>
                             array(
                                 'title' => 'Twitter',
-                                'url' => 'https://twitter.com/vademenko',
+                                'url' => 'https://twitter.com/Faisalg11357301?s=09',
                                 'avatar' => 'ruslan_babkin/twitter.png',
-                            ),
-                            1 =>
-                            array(
-                                'title' => 'LinkedIn',
-                                'url' => 'https://www.linkedin.com/in/vdemenko/',
-                                'avatar' => 'ruslan_babkin/linkedin.png',
-                            ),
-
+                            )
                         ),
                     ),
                 ),

@@ -127,6 +127,9 @@ class AuthController extends BaseController
         if (!Auth::once($credentials)) {
             return response()->json(['authenticationError' => "Invalid login credentials!"]);
         }
+        if (!auth()->user()->status) {
+            return $this->resMsg(['error' => "User inactive! please contact admin."], 'authentication', 400);
+        }
         // auth()->user()->tokens()->delete();
         $token = auth()->user()->createToken('auth_token', [], ["authenticated-user"]);
 

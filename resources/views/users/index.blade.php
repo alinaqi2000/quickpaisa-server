@@ -10,9 +10,9 @@
             <h1 class="h3 mb-0 text-gray-800">Users</h1>
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{ route('users.create') }}" class="btn btn-sm btn-primary">
+                    {{-- <a href="{{ route('users.create') }}" class="btn btn-sm btn-primary">
                         <i class="fas fa-plus"></i> Add New
-                    </a>
+                    </a> --}}
                 </div>
                 {{-- <div class="col-md-6">
                     <a href="{{ route('users.export') }}" class="btn btn-sm btn-success">
@@ -61,25 +61,28 @@
                                         @endif
                                     </td>
                                     <td style="display: flex">
-                                        @if ($user->status == 0)
-                                            <a href="{{ route('users.status', ['user_id' => $user->id, 'status' => 1]) }}"
-                                                class="btn btn-sm btn-success m-2">
-                                                <i class="fa fa-check"></i>
-                                            </a>
-                                        @elseif ($user->status == 1)
-                                            <a href="{{ route('users.status', ['user_id' => $user->id, 'status' => 0]) }}"
-                                                class="btn btn-sm btn-danger m-2">
-                                                <i class="fa fa-ban"></i>
-                                            </a>
+                                        @if ($user->role_id != '1')
+                                            @if ($user->status == 0)
+                                                <a href="{{ route('users.status', ['user_id' => $user->id, 'status' => 1]) }}"
+                                                    class="btn btn-sm btn-success m-2">
+                                                    <i class="fa fa-check"></i>
+                                                </a>
+                                            @elseif ($user->status == 1)
+                                                <a href="{{ route('users.status', ['user_id' => $user->id, 'status' => 0]) }}"
+                                                    class="btn btn-sm btn-danger m-2">
+                                                    <i class="fa fa-ban"></i>
+                                                </a>
+                                            @endif
                                         @endif
                                         <a href="{{ route('users.edit', ['user' => $user->id]) }}"
                                             class="btn btn-sm btn-primary m-2">
                                             <i class="fa fa-pen"></i>
                                         </a>
                                         <a class="btn btn-sm btn-danger m-2" href="#" data-toggle="modal"
-                                            data-target="#deleteModal">
+                                            data-target="#deleteModal{{ $user->id }}">
                                             <i class="fas fa-trash"></i>
                                         </a>
+                                        @include('users.delete-modal', ['user' => $user])
                                     </td>
                                 </tr>
                             @endforeach
@@ -93,7 +96,6 @@
 
     </div>
 
-    @include('users.delete-modal')
 
 @endsection
 

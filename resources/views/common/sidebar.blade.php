@@ -1,11 +1,11 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-university"></i>
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
+        <div class="sidebar-brand-icon">
+            <i class="fas fa-qrcode"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Tech-Admin</div>
+        <div class="sidebar-brand-text mx-3">QuickPaisa</div>
     </a>
 
     <!-- Divider -->
@@ -37,12 +37,26 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">User Management:</h6>
                 <a class="collapse-item" href="{{ route('users.index') }}">List</a>
-                <a class="collapse-item" href="{{ route('users.create') }}">Add New</a>
+                {{-- <a class="collapse-item" href="{{ route('users.create') }}">Add New</a> --}}
                 {{-- <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a> --}}
             </div>
         </div>
     </li>
-
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#transactionDropDown"
+            aria-expanded="true" aria-controls="transactionDropDown">
+            <i class="fas fa-user-alt"></i>
+            <span>Transactions</span>
+        </a>
+        <div id="transactionDropDown" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Management:</h6>
+                <a class="collapse-item" href="{{ route('transactions.index') }}">List</a>
+                {{-- <a class="collapse-item" href="{{ route('users.create') }}">Add New</a> --}}
+                {{-- <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a> --}}
+            </div>
+        </div>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -63,7 +77,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Role & Permissions</h6>
                     <a class="collapse-item" href="{{ route('roles.index') }}">Roles</a>
-                    <a class="collapse-item" href="{{ route('permissions.index') }}">Permissions</a>
+                    {{-- <a class="collapse-item" href="{{ route('permissions.index') }}">Permissions</a> --}}
                 </div>
             </div>
         </li>

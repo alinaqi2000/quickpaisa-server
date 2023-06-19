@@ -65,6 +65,11 @@ class User extends Authenticatable
         return $this->bank_details()->sum("bankBalance");
     }
 
+    // Scopes
+    public function scopeUser()
+    {
+        return $this->where("role_id", "2");
+    }
     // Relations
     public function role()
     {

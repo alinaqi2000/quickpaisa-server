@@ -101,16 +101,16 @@
             z-index: 999
         }
 
-        .gp-imageP {
+        .gp-image {
             width: 150px;
-            height: 25px;
+            height: 50px;
         }
     </style>
 </head>
 
 <body>
     <div class="product-container">
-        <img class="logo" src="{{ 'https://www.imgtr.ee/images/2023/05/11/l5wWL.png' }}" alt="{{ env('APP_NAME') }}">
+        <img class="logo" src="{{ asset('qp.png') }}" alt="{{ env('APP_NAME') }}">
         <h1 class="product-title">{{ $brand_product->title }}</h1>
         <p class="product-description">{{ $brand_product->brand->name }}</p>
         <p class="product-amount"><span>Rs. {{ $brand_product->amount }}</span></p>
@@ -135,7 +135,7 @@
         {{-- <img class="qr-code"
             src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fexample.com%2Fproduct%2F12345&amp;size=150x150"
             alt="{{ $brand_product->title }}"> --}}
-        <img class="gp-image" src="https://www.imgtr.ee/images/2023/05/11/lVAiF.png" alt="">
+        <img class="gp-image" src="{{ asset('google.png') }}" alt="">
 
         </a>
 
